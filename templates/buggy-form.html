@@ -5,6 +5,11 @@
 {% block content %}
 
   <h1>Make buggy</h1>
+  
+  <p>
+    {{ msg }}
+  </p>
+  
   <form action="/new" method="post">
     <label for="qty_wheels">Number of Wheels:</label>
     <input type="text" name="qty_wheels" /><br>

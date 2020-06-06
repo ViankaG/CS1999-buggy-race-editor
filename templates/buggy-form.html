@@ -4,12 +4,18 @@
 
 {% block content %}
 
-  <h1>Make buggy</h1>
-  
+  <div class="header">
+   <h1>Make Buggy</h1>
+  </div>
+
   <p>
     {{ msg }}
   </p>
-  
+
+  <div class="racingimg">
+   <img src="../static/racing.png" width="450" height="250" alt="Picture of racing flags">
+  </div>
+
   <form action="/new" method="post">
     <label for="qty_wheels">Number of Wheels:</label>
     <input type="text" name="qty_wheels" /><br>
@@ -50,7 +56,8 @@
 
     <input type="submit" class="button">
   </form>
-  <p>
-    <a href="/" class="button">home</a>
-   </p>
+
+  <div class="button">
+   <a href="/" class="button">Home</a>
+  </div>
 {% endblock %}

@@ -18,41 +18,23 @@
 
   <form action="/new" method="post">
     <label for="qty_wheels">Number of Wheels:</label>
-    <input type="text" name="qty_wheels" /><br>
+    <input type="text" name="qty_wheels" style="margin: 0 0 0 0.5em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
 
-    <label for="flag_color">Colour of Flag:</label>
-    <select name="flag_color">
-     <option value="red">Red</option>
-     <option value="orange">Orange</option>
-     <option value="yellow">Yellow</option>
-     <option value="green">Green</option>
-     <option value="blue">Blue</option>
-     <option value="indigo">Indigo</option>
-     <option value="violet">Violet</option>
+    <label for="flag_color">Flag's Colour:</label>
+    <input type="text" name="flag_color" style="margin: 1em 0 0 3em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
+
+    <label for="flag_color_secondary">Flag's Other Colour:</label>
+    <input type="text" name="flag_color_secondary" style="margin: 1em 0 0 0.25em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
+
+    <label for="flag_pattern">Flag's Pattern:</label>
+    <select name="flag_pattern" style="margin: 1.5em 0 0 3.25em; font-size: 18px; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;">
+     <option value="plain">Plain</option>
+     <option value="vstripe">VStripe</option>
+     <option value="hstripe">HStripe</option>
+     <option value="dstripe">DStripe</option>
+     <option value="checker">Checker</option>
+     <option value="spot">Spot</option>
     </select><br>
-
-    <label for="flag_color_secondary">Secondary Colour of Flag:</label>
-    <select name="flag_color_secondary">
-     <option value="red">Red</option>
-     <option value="orange">Orange</option>
-     <option value="yellow">Yellow</option>
-     <option value="green">Green</option>
-     <option value="blue">Blue</option>
-     <option value="indigo">Indigo</option>
-     <option value="violet">Violet</option>
-    </select><br>
-
-    <p>Please select a pattern for your flag:</p>
-    <input type="radio" name="flag_pattern" value="checkered">
-    <label for="checkered">Checkered</label><br>
-    <input type="radio" name="flag_pattern" value="chevron">
-    <label for="chevron">Chevron</label><br>
-    <input type="radio" name="flag_pattern" value="harlequin">
-    <label for="harlequin">Harlequin</label><br>
-    <input type="radio" name="flag_pattern" value="polka_dot">
-    <label for="polka_dot">Polka Dot</label><br>
-    <input type="radio" name="flag_pattern" value="stripes">
-    <label for="stripes">Stripes</label><br>
 
     <input type="submit" class="button">
   </form>

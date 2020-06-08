@@ -23,17 +23,44 @@ def home():
 @app.route('/new', methods = ['POST', 'GET'])
 def create_buggy():
   if request.method == 'GET':
-    return render_template("buggy-form.html")
+     con = sql.connect(DATABASE_FILE)
+     con.row_factory = sql.Row
+     cur = con.cursor()
+     cur.execute("SELECT * FROM buggies")
+     record = cur.fetchone();
+     return render_template("buggy-form.html", buggy = record)
   elif request.method == 'POST':
     msg=""
     qty_wheels = request.form['qty_wheels']
+    flag_color = request.form['flag_color']
+    flag_color_secondary = request.form['flag_color_secondary']
+    flag_pattern = request.form['flag_pattern']
     if not qty_wheels.isdigit():
        msg = f"{qty_wheels.capitalize()} is not a number. Try again."
-       return render_template("buggy-form.html", msg = msg)
+       con = sql.connect(DATABASE_FILE)
+       con.row_factory = sql.Row
+       cur = con.cursor()
+       cur.execute("SELECT * FROM buggies")
+       record = cur.fetchone();
+       return render_template("buggy-form.html", msg = msg, buggy = record)
+    elif not int(qty_wheels) % 2 == 0:
+       msg = f"{qty_wheels} is not an even number. Try again."
+       con = sql.connect(DATABASE_FILE)
+       con.row_factory = sql.Row
+       cur = con.cursor()
+       cur.execute("SELECT * FROM buggies")
+       record = cur.fetchone();
+       return render_template("buggy-form.html", msg = msg, buggy = record)
+    elif not flag_pattern == "plain":
+       if flag_color == flag_color_secondary:
+          msg = f"The Flag's Other Colour is the same as the Flag's Colour, they must be different. Try again."
+          con = sql.connect(DATABASE_FILE)
+          con.row_factory = sql.Row
+          cur = con.cursor()
+          cur.execute("SELECT * FROM buggies")
+          record = cur.fetchone();
+          return render_template("buggy-form.html", msg = msg, buggy = record)
     try:
-      flag_color = request.form['flag_color']
-      flag_color_secondary = request.form['flag_color_secondary']
-      flag_pattern = request.form['flag_pattern']
       msg = f"flag_color={flag_color}, flag_color_secondary={flag_color_secondary}, flag_pattern={flag_pattern}"
       with sql.connect(DATABASE_FILE) as con:
         cur = con.cursor()

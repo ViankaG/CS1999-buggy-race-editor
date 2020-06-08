@@ -18,13 +18,13 @@
 
   <form action="/new" method="post">
     <label for="qty_wheels">Number of Wheels:</label>
-    <input type="text" name="qty_wheels" style="margin: 0 0 0 0.5em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
+    <input type="text" name="qty_wheels" value="{{ buggy['qty_wheels'] }}" style="margin: 0 0 0 0.5em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
 
     <label for="flag_color">Flag's Colour:</label>
-    <input type="text" name="flag_color" style="margin: 1em 0 0 3em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
+    <input type="text" name="flag_color" value="{{ buggy['flag_color'] }}" style="margin: 1em 0 0 3em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
 
     <label for="flag_color_secondary">Flag's Other Colour:</label>
-    <input type="text" name="flag_color_secondary" style="margin: 1em 0 0 0.25em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
+    <input type="text" name="flag_color_secondary" value="{{ buggy['flag_color_secondary'] }}" style="margin: 1em 0 0 0.25em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
 
     <label for="flag_pattern">Flag's Pattern:</label>
     <select name="flag_pattern" style="margin: 1.5em 0 0 3.25em; font-size: 18px; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;">

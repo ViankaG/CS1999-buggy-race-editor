@@ -18,16 +18,16 @@
 
   <form action="/new" method="post">
     <label for="qty_wheels">Number of Wheels:</label>
-    <input type="text" name="qty_wheels" value="{{ buggy['qty_wheels'] }}" style="margin: 0 0 0 0.5em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
+    <input type="text" name="qty_wheels" value="{{ buggy['qty_wheels'] }}" style="margin: 0 0 0 4.85em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
 
     <label for="flag_color">Flag's Colour:</label>
-    <input type="text" name="flag_color" value="{{ buggy['flag_color'] }}" style="margin: 1em 0 0 3em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
+    <input type="text" name="flag_color" value="{{ buggy['flag_color'] }}" style="margin: 1em 0 0 7.35em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
 
     <label for="flag_color_secondary">Flag's Other Colour:</label>
-    <input type="text" name="flag_color_secondary" value="{{ buggy['flag_color_secondary'] }}" style="margin: 1em 0 0 0.25em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
+    <input type="text" name="flag_color_secondary" value="{{ buggy['flag_color_secondary'] }}" style="margin: 1em 0 0 4.5em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
 
     <label for="flag_pattern">Flag's Pattern:</label>
-    <select name="flag_pattern" style="margin: 1.5em 0 0 3.25em; font-size: 18px; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;">
+    <select name="flag_pattern" style="margin: 1em 0 0 7.75em; font-size: 18px; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;">
      <option value="plain">Plain</option>
      <option value="vstripe">VStripe</option>
      <option value="hstripe">HStripe</option>
@@ -35,6 +35,9 @@
      <option value="checker">Checker</option>
      <option value="spot">Spot</option>
     </select><br>
+
+    <label for="hamster_booster">Number of Hamster Boosters:</label>
+    <input type="text" name="hamster_booster" value="{{ buggy['hamster_booster'] }}" style="margin: 1em 0 0 0.25em; font-family: Book Antiqua, Palatino Linotype, Arial, Helvetica, serif;" /><br>
 
     <input type="submit" class="button">
   </form>
